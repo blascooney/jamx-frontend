@@ -1,0 +1,46 @@
+@import "mixins";
+
+:root {
+  --primary-color-700: #2E2893;
+  --primary-color-500: #4942F6;
+  --primary-color-300: #7873FF;
+  --primary-color-200: #BBB3FF;
+  --primary-color-100: #F4F2FF;
+  --secondary-700: #fad039;
+  --secondary-600: #FFCA00;
+  --secondary-500: #FFDA52;
+  --secondary-400: #FFE891;
+  --secondary-200: #FFF2C1;
+
+  --type-light-gray: #F5F5F5;
+
+  --black-color: #000;
+  --white-color: #FFF;
+
+  --dark-color-100: #131313;
+  --dark-color-200: #1D1D1B;
+  --dark-color-300: #101010;
+
+  --yellow-color-100: #D9FF3F;
+  --pink-color-100: #FFA7FB;
+  --pink-color-200: #e59be2;
+  --lavender-color-100: #AAA7FF;
+  --lavender-color-200: #55FFA5;
+  --lavender-color-300: #55e497;
+  --lavender-color-400: #BBB3FF;
+  --lavender-color-500: #a9a3e4;
+
+  --page-padding: 56px;
+}
+
+@media (max-width: 1919px) {
+  :root {
+    --page-padding: 35px;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --page-padding: 16px;
+  }
+}
