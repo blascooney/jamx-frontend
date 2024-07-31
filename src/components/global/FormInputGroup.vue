@@ -5,6 +5,7 @@ const props = defineProps({
 	setValue: Function,
   placeHolder: String,
   type: String,
+  name: String,
   required: Boolean,
 });
 </script>
@@ -12,7 +13,7 @@ const props = defineProps({
 <template>
   <div class="form-input-group">
     <label>{{ props.label }}</label>
-    <input :type="props.type" :value="value" @change="props.setValue" :placeholder="props.placeHolder" :required="props.required ?? false" />
+    <input :type="props.type" :name="name" :value="value" @change="props.setValue" :placeholder="props.placeHolder" :required="props.required ?? false" />
   </div>
 </template>
 

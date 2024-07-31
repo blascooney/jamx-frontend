@@ -27,27 +27,23 @@ const onChangeRssUrl = (e: any) => {
 }
 
 const onSubmit = async (e: any) => {
-  const form = document.getElementById("signup_form");
-  if (form instanceof HTMLFormElement && form.checkValidity()) {
-    e.preventDefault();
-    isLoading.value = true;
-		await podcastersSignup(name.value, email.value, rssUrl.value, props.onSubmitEnd);
-    isLoading.value = false;
-  }
+  e.preventDefault();
+  isLoading.value = true;
+	await podcastersSignup(name.value, email.value, rssUrl.value, props.onSubmitEnd);
+  isLoading.value = false;
 }
 
 </script>
 
 <template>
-  <form id="signup_form" >
-    <FormInputGroup type="text" label="Name" placeHolder="Enter your name" :value="name" :setValue="onChangeName" :required="true" />
-    <FormInputGroup type="email" label="Email" placeHolder="example@gmail.com" :value="email" :setValue="onChangeEmail" :required="true" />
-    <FormInputGroup type="url" label="RSS URL" placeHolder="Enter URL here" :value="rssUrl" :setValue="onChangeRssUrl" :required="true" />
+  <form id="signup_form" action="#" @submit="onSubmit">
+    <FormInputGroup type="text" name="name" label="Name" placeHolder="Enter your name" :value="name" :setValue="onChangeName" :required="true" />
+    <FormInputGroup type="email" name="email" label="Email" placeHolder="example@gmail.com" :value="email" :setValue="onChangeEmail" :required="true" />
+    <FormInputGroup type="url" name="rssUrl" label="RSS URL" placeHolder="Enter URL here" :value="rssUrl" :setValue="onChangeRssUrl" :required="true" />
     <CoreButton
       class="btn-sign-up text-center"
       :is-yellow="true"
       :disabled="isLoading"
-      @click="onSubmit"
       >SIGN UP
       <slot />
     </CoreButton>
