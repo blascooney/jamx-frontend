@@ -5,8 +5,8 @@ import Column from "@/components/core/Column.vue";
 const data = {
   propsList: [
     {
-      value: "6M",
-      label: "Monthly sessions",
+      value: "2M",
+      label: "Monthly Downloads",
     },
     {
       value: "600M",
@@ -14,7 +14,7 @@ const data = {
     },
     {
       value: "4M",
-      label: "US listeners",
+      label: "US Listeners",
     },
   ],
 };

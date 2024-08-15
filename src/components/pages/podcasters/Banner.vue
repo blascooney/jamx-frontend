@@ -6,11 +6,9 @@ import IMobileBG from "@/assets/svg/banner-mobile-bg.vue";
 
 const data = {
   title:
-    "Amplify your <span class='bg-reach'>reach</span> with JamX Distribution",
+    "Tap into a <span class='bg-intent-audience'>High-Intent Audience</span> <br class='bg-intent-audience-br'/> <span class='bg-intent'>High-Intent</span> <br class='bg-intent-audience-br'/> <span class='bg-audience'>Audience</span>",
   subtitle:
-    "Unlock the potential of your <span class='bg-podcast'>podcast</span>",
-  content:
-    "Contextual podcast  distribution, empowering podcasters to expand their listener base, connect with engaged audiences, and reach new heights.",
+    " to expand your listener base, build a <span class='bg-podcast'> loyal community,</span>  and take your podcast to new heights.",
 };
 </script>
 
@@ -48,14 +46,6 @@ const data = {
           v-html="data.subtitle"
         >
         </h2>
-        <div
-          class="content text-center"
-          data-scroll
-          data-scroll-direction="vertical"
-          data-scroll-speed="1"
-        >
-          {{ data.content }}
-        </div>
         <div class="banner-action flex-center">
           <GetStartedTodayButton />
         </div>
@@ -79,7 +69,7 @@ const data = {
   }
 
   .banner-inner {
-    max-width: 1222px;
+    max-width: 1188px;
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -99,15 +89,27 @@ const data = {
 
     .title {
       color: #fff;
-      font-size: 56px;
+      font-size: 60px;
       font-weight: 300;
       line-height: 75px;
-      span.bg-reach {
+      span.bg-intent-audience,
+      span.bg-intent,
+      span.bg-audience {
         background: #55FFA5;
         border-radius: 100px;
         color: #101010;
         padding: 0px 20px;
         font-weight: 600;
+      }
+      span.bg-intent-audience {
+        display: inline-block;
+      }
+      span.bg-intent,
+      span.bg-audience  {
+        display: none;
+      }
+      br.bg-intent-audience-br {
+        display: none;
       }
     }
 
@@ -116,8 +118,11 @@ const data = {
       font-size: 43px;
       font-weight: 300;
       line-height: 48px;
+      margin-top: 15px;
+
       span.bg-podcast {
         background: #AAA7FF;
+        display: inline-block;
         border-radius: 100px;
         color: #101010;
         padding: 0px 10px;
@@ -163,7 +168,7 @@ const data = {
   .advertisers-banner .banner-inner .title {
     font-size: 38px;
     font-weight: 300;
-    line-height: 50px;
+    line-height: 45px;
   }
 
   .advertisers-banner .banner-inner .subtitle {
@@ -191,4 +196,18 @@ const data = {
     bottom: auto;
   }
 }
+@media (max-width: 450px) {
+  .advertisers-banner .banner-inner .title span.bg-intent-audience {
+    display: none;
+  }
+  .advertisers-banner .banner-inner .title br.bg-intent-audience-br {
+    display: inline-block;
+  }
+  .advertisers-banner .banner-inner .title span.bg-intent,
+  .advertisers-banner .banner-inner .title span.bg-audience {
+    margin-top: 5px;
+    display: inline-block;
+  }
+}
+
 </style>

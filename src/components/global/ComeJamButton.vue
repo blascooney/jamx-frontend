@@ -15,7 +15,7 @@ const props = defineProps({
     class="btn-come text-center"
     :is-yellow="true"
     @click="() => props.onClick ? props.onClick() : router.push('/contact')"
-    >{{ props.title ?? 'COME JAM WITH US' }}
+    >{{ props.title ?? 'JAM WITH US' }}
     <slot />
   </CoreButton>
 </template>

@@ -1,6 +1,9 @@
 <script setup lang="ts">
-import Banner from "@/components/pages/solutions/Banner.vue";
+// import Banner from "@/components/pages/solutions/Banner.vue";
 import PodcastPlayer from "@/components/pages/solutions/PodcastPlayer.vue";
+import JamxDashboard from "@/components/pages/solutions/JamxDashboard.vue";
+import JamxApp from "@/components/pages/solutions/JamxApp.vue";
+import JamxProduction from "@/components/pages/solutions/JamxProduction.vue";
 import Empty from "@/components/pages/solutions/Empty.vue";
 import { onMounted } from "vue";
 onMounted(() => {
@@ -11,8 +14,11 @@ onMounted(() => {
 
 <template>
   <main class="main">
-    <Banner />
+    <!-- <Banner /> -->
     <PodcastPlayer />
+    <JamxDashboard />
+    <JamxApp />
     <Empty />
+    <JamxProduction />
   </main>
 </template>

@@ -34,7 +34,7 @@ const { icon, rate, text, background } = defineProps({
   .icon {
     width: 39px;
     height: 39px;
-    background: var(--dark-color-300);
+    // background: var(--dark-color-300);
     border-radius: 50%;
   }
 

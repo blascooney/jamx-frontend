@@ -1,29 +1,36 @@
 <script setup lang="ts">
 // @ts-nocheck
 import { podcastersSignup } from "@/helpers/global";
+import CoreButton from "@/components/core/Button.vue";
 import { ref } from "vue";
 
-const email = ref<string>("");
-const rss = ref<string>("");
-const isLoading = ref<boolean>(false);
+// const email = ref<string>("");
+// const rss = ref<string>("");
+// const isLoading = ref<boolean>(false);
 
-const onChangeEmail = (e: any) => {
-	email.value = e.target.value;
-}
+// const onChangeEmail = (e: any) => {
+// 	email.value = e.target.value;
+// }
 
-const onChangeRss = (e: any) => {
-	rss.value = e.target.value;
-}
+// const onChangeRss = (e: any) => {
+// 	rss.value = e.target.value;
+// }
+
+// const onSignUp = async (e: any) => {
+//   const form = document.getElementById("po_footer_form");
+//   if (form instanceof HTMLFormElement && form.checkValidity()) {
+//     e.preventDefault();
+//     isLoading.value = true;
+// 		await podcastersSignup('', email.value, rss.value, null);
+//     isLoading.value = false;
+//   }
+// }
 
 const onSignUp = async (e: any) => {
-  const form = document.getElementById("po_footer_form");
-  if (form instanceof HTMLFormElement && form.checkValidity()) {
-    e.preventDefault();
-    isLoading.value = true;
-		await podcastersSignup('', email.value, rss.value, null);
-    isLoading.value = false;
-  }
+  e.preventDefault();
+  window.open('https://platform.jamx.ai/#/podcaster-signup');
 }
+
 </script>
 
 <template>
@@ -41,9 +48,16 @@ const onSignUp = async (e: any) => {
           </div>
           <div class="right">
             <form class="po-footer-form" id="po_footer_form">
-              <input placeholder="your email" :value="email" type="email" @change="onChangeEmail" required />
+              <CoreButton
+                class="btn-sign-up text-center"
+                :is-yellow="true"
+                @click="onSignUp"
+              >
+                Sign Up
+              </CoreButton>
+              <!-- <input placeholder="your email" :value="email" type="email" @change="onChangeEmail" required />
               <input placeholder="rss feed url" :value="rss" type="url" @change="onChangeRss" required />
-              <button type="submit" @click="onSignUp" :disabled="isLoading">Sign up now</button>
+              <button type="submit" @click="onSignUp" :disabled="isLoading">Sign up now</button> -->
               <p>By signing up you agree to our <a href="/terms" target="_blank">Terms and conditions</a></p>
             </form>
           </div>
@@ -109,14 +123,16 @@ const onSignUp = async (e: any) => {
                 border: none;
               }
               button {
-                color: white;
-                line-height: 18px;
-                font-size: 14px;
-                background: #101010;
-                padding: 7px 12px;
-                margin-bottom: 4px;
-                border-radius: 30px;
+                // color: white;
+                // line-height: 18px;
+                // font-size: 14px;
+                // background: #101010;
+                // padding: 7px 12px;
+                // margin-bottom: 4px;
+                // border-radius: 30px;
                 cursor: pointer;
+                width: 270px;
+                height: 48px;
               }
               p {
                 line-height: 22px;

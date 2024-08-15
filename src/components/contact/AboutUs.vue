@@ -2,13 +2,15 @@
 import ComeJamButton from "@/components/global/ComeJamButton.vue";
 const data = {
   title: "About us",
-  content: `At the very core of our identity, we see ourselves as enablers, standing at the intersection of technology, creativity, and user experience. Our grand vision is to create a world where audio effortlessly intertwines with other digital media, forming a captivating symphony of information consumption. We firmly believe in the transformative power of audio as a medium, elevating the way people experience and engage with content.
+  content: `We are enablers, facilitators, visionaries, and dreamers – sitting at the crossroads where technology, creativity, and human experience collide. We see a future where there are no barriers between audio content and other digital media, so audiences can consume information however they choose. 
 <br><br>
-In our realm, we embrace the spontaneity and joy of informal gatherings, breaking away from the stifling formalities of large companies. Here, every individual is warmly welcomed, from aspiring amateurs to corporate giants or media groups. Our platform offers an unparalleled chance to collaborate and step into the world of audio, sparking inspiration and fostering a thriving innovative, and creative spirit. 
+JamX puts people at the heart of everything we do. From aspiring amateurs to corporate giants, and independent podcasters to vast podcast networks, we are a people-centric company focusing on the human experience.
 <br><br>
-In our creative haven, the magic of audio takes center stage, providing an unmatched platform for harmonious interactions. Join us in this enchanting journey where the potential of audio knows no bounds, enriching the way publishers connect with audiences and the world.
+In the JamX world, the magic of audio takes center stage. Podcasters, publishers, and audio advertisers come to jam together, creating a beautiful symphony in which everyone wins.
 <br><br>
-Together, let's leave a lasting impact on the way information is consumed, and audio is experienced.
+We’re changing the way people experience audio around the world. We’re changing the way information is consumed. We’re more than a podcast network – we’re JamX.
+<br><br>
+Want to be part of the revolution? Let’s Jam!
 `,
 };
 </script>

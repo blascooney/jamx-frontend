@@ -26,8 +26,9 @@ const getTranslationY = () => {
 }
 
 const onClick = () => {
-  modalOpen.value = true;
-  translateY.value = getTranslationY();
+  window.open('https://platform.jamx.ai/#/podcaster-signup');
+  // modalOpen.value = true;
+  // translateY.value = getTranslationY();
 }
 </script>
 

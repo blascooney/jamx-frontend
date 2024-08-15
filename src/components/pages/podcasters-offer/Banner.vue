@@ -1,32 +1,38 @@
 <script setup lang="ts">
 import IPOBannerBrowser from "@/assets/images/po-banner-browser.png";
 import ILogo from "@/assets/svg/logo.vue";
-import IEmail from "@/assets/svg/email.vue";
-import IRSSFeed from "@/assets/svg/rss-feed.vue";
+// import IEmail from "@/assets/svg/email.vue";
+// import IRSSFeed from "@/assets/svg/rss-feed.vue";
+import CoreButton from "@/components/core/Button.vue";
 // @ts-ignore
 import { podcastersSignup } from "@/helpers/global";
 import { ref } from "vue";
 
-const email = ref<string>("");
-const rss = ref<string>("");
-const isLoading = ref<boolean>(false);
+// const email = ref<string>("");
+// const rss = ref<string>("");
+// const isLoading = ref<boolean>(false);
 
-const onChangeEmail = (e: any) => {
-	email.value = e.target.value;
-}
+// const onChangeEmail = (e: any) => {
+// 	email.value = e.target.value;
+// }
 
-const onChangeRss = (e: any) => {
-	rss.value = e.target.value;
-}
+// const onChangeRss = (e: any) => {
+// 	rss.value = e.target.value;
+// }
+
+// const onSignUp = async (e: any) => {
+//   const form = document.getElementById("po_banner_form");
+//   if (form instanceof HTMLFormElement && form.checkValidity()) {
+//     e.preventDefault();
+//     isLoading.value = true;
+// 		await podcastersSignup('', email.value, rss.value, null);
+//     isLoading.value = false;
+//   }
+// }
 
 const onSignUp = async (e: any) => {
-  const form = document.getElementById("po_banner_form");
-  if (form instanceof HTMLFormElement && form.checkValidity()) {
-    e.preventDefault();
-    isLoading.value = true;
-		await podcastersSignup('', email.value, rss.value, null);
-    isLoading.value = false;
-  }
+  e.preventDefault();
+  window.open('https://platform.jamx.ai/#/podcaster-signup');
 }
 
 </script>
@@ -46,7 +52,7 @@ const onSignUp = async (e: any) => {
             <p>JamX boosts your podcast by recommending your episodes on top sites, directly connecting with eager listeners, enhancing your visibility and engagement.</p>
           </div>
           <form class="left-form" id="po_banner_form">
-            <div class="input-group">
+            <!-- <div class="input-group">
               <div class="icon"><IEmail /></div>
               <input class="input" placeholder="Your email" :value="email" type="email" @change="onChangeEmail" required />
             </div>
@@ -54,7 +60,14 @@ const onSignUp = async (e: any) => {
               <div class="icon"><IRSSFeed /></div>
               <input class="input" placeholder="Your RSS Feed" :value="rss" type="url" @change="onChangeRss" required />
               <button type="submit" @click="onSignUp" :disabled="isLoading">Sign up now</button>
-            </div>
+            </div> -->
+            <CoreButton
+              class="btn-sign-up text-center"
+              :is-yellow="true"
+              @click="onSignUp"
+            >
+              Sign Up
+            </CoreButton>
             <p class="desc">By signing up you agree to our <a href="/terms" target="_blank">Terms and conditions</a></p>
           </form>
         </div>
@@ -99,6 +112,10 @@ const onSignUp = async (e: any) => {
         }
         .left-form {
           margin-top: 10px;
+          button {
+            width: 270px;
+            height: 48px;
+          }
           .input-group {
             position: relative;
             width: 100%;

@@ -10,13 +10,17 @@ onMounted(() => {
   window.addEventListener("resize", () => {
     browserWidth.value = window.innerWidth;
   });
+  const script = document.createElement('script');
+  script.src = 'https://wgt.podcastswaves.com/jamx.player.js';
+  script.async = true;
+  document.body.appendChild(script);
 });
 </script>
 
 <template>
-  <section class="out-experience">
+  <section class="our-experience">
     <div class="container">
-      <div class="out-experience-inner">
+      <div class="our-experience-inner">
         <div class="left">
           <div class="content">
             <img :src="IExpreienceImg" alt="" />
@@ -25,8 +29,18 @@ onMounted(() => {
               data-scroll
               data-scroll-direction="vertical"
               data-scroll-speed="2"
+              :style="`width: ${
+                browserWidth >= 768 ? 360 : 333
+              }px; max-width: 750px`"
             >
-              <iframe
+              <jamx-player  
+                seller="5000" 
+                subseller="1285" 
+                domain="jamx.ai" theme="0" 
+                layout="1"  
+                style="width: 100%;"
+              ></jamx-player>
+              <!-- <iframe
                 :src="`https://sky.audiopulsar.com?seller=5000&subseller=1183&domain=demo.com&theme=1&layout=1&width=360px`"
                 frameborder="0"
                 height="256"
@@ -34,7 +48,7 @@ onMounted(() => {
                 :style="`width: ${
                   browserWidth >= 768 ? 360 : 333
                 }px; max-width: 750px`"
-              ></iframe>
+              ></iframe> -->
             </div>
           </div>
         </div>
@@ -42,7 +56,7 @@ onMounted(() => {
           <div class="right-content">
             <div class="text">
               <p class="black">
-                Positioned at the intersection of technology, creativity, and user experience, we specialize in enabling a seamless integration of audio with other digital media, providing our partners with comprehensive solutions that unlock the full potential of the evolving audio ecosystem.
+                JamX combines cutting-edge technology, artificial intelligence, and a smooth user experience to deliver audio content to a new audience. It’s a platform for listeners to discover the undiscoverable and fall in love with new podcasts, and publishers to retain an engaged audience.
               </p>
             </div>
             <div class="actions flex-center">
@@ -56,7 +70,7 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
-.out-experience {
+.our-experience {
   padding-top: 100px;
   padding-bottom: 100px;
 
@@ -64,7 +78,7 @@ onMounted(() => {
     padding-left: 40px;
     padding-right: 40px;
 
-    .out-experience-inner {
+    .our-experience-inner {
       height: 600px;
       padding-left: 40px;
       padding-right: 40px;
@@ -116,19 +130,19 @@ onMounted(() => {
 }
 
 @media (max-width: 1599px) {
-  .out-experience .container .out-experience-inner {
+  .our-experience .container .our-experience-inner {
     margin-left: auto;
     margin-right: auto;
     border-radius: 60px;
   }
 
-  .out-experience .container .out-experience-inner .right {
+  .our-experience .container .our-experience-inner .right {
     padding-left: 0px;
   }
 
-  .out-experience
+  .our-experience
     .container
-    .out-experience-inner
+    .our-experience-inner
     .right
     .right-content
     .actions
@@ -139,45 +153,45 @@ onMounted(() => {
 }
 
 @media (max-width: 1339px) {
-  .out-experience .container .out-experience-inner .right {
+  .our-experience .container .our-experience-inner .right {
     padding-left: 15px;
   }
 
-  .out-experience .container .out-experience-inner .right .right-content {
+  .our-experience .container .our-experience-inner .right .right-content {
     width: auto;
   }
 
-  .out-experience .container .out-experience-inner .right .right-content .actions {
+  .our-experience .container .our-experience-inner .right .right-content .actions {
     margin-top: 15px;
   }
 }
 
 @media (max-width: 1199px) {
-  .out-experience .container .out-experience-inner {
+  .our-experience .container .our-experience-inner {
     display: block;
     height: auto;
     padding-bottom: 50px;
   }
-   .out-experience .container .out-experience-inner .right {
+   .our-experience .container .our-experience-inner .right {
        padding-left: 0px;
    }
-  .out-experience .container .out-experience-inner .right .right-content .text {
+  .our-experience .container .our-experience-inner .right .right-content .text {
     padding-top: 125px;
   }
-    .out-experience .container .out-experience-inner .right .right-content .actions {
+    .our-experience .container .our-experience-inner .right .right-content .actions {
     margin-top: 50px;
   }
-  .out-experience .container .out-experience-inner .left {
+  .our-experience .container .our-experience-inner .left {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  .out-experience .container .out-experience-inner .left img {
+  .our-experience .container .our-experience-inner .left img {
     margin-bottom: -100px;
   }
-  .out-experience
+  .our-experience
     .container
-    .out-experience-inner
+    .our-experience-inner
     .left
     .pulsar-player-wrapper {
     top: 40%;
@@ -185,53 +199,53 @@ onMounted(() => {
 }
 
 @media (max-width: 767px) {
-  .out-experience {
+  .our-experience {
     overflow: hidden;
     padding-top: 53px;
     padding-bottom: 53px;
   }
 
-  .out-experience .container {
+  .our-experience .container {
     padding-top: 82px;
     padding-bottom: 0px;
     padding-left: 3px;
     padding-right: 2px;
   }
 
-  .out-experience .container .out-experience-inner .left img {
+  .our-experience .container .our-experience-inner .left img {
     margin-top: -150px;
     margin-left: -150px;
     transform: scale(0.8);
   }
 
-  .out-experience .container .out-experience-inner {
+  .our-experience .container .our-experience-inner {
     padding-left: 40px;
     padding-right: 30px;
   }
 
-  .out-experience .container .out-experience-inner .right .right-content .text {
-    padding-top: 75px;
+  .our-experience .container .our-experience-inner .right .right-content .text {
+    padding-top: 150px;
   }
 
-  .out-experience .container .out-experience-inner .right .right-content {
+  .our-experience .container .our-experience-inner .right .right-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 
-  .out-experience
+  .our-experience
     .container
-    .out-experience-inner
+    .our-experience-inner
     .right
     .right-content
     .actions {
     display: block;
   }
 
-  .out-experience
+  .our-experience
     .container
-    .out-experience-inner
+    .our-experience-inner
     .left
     .pulsar-player-wrapper {
     left: 18%;

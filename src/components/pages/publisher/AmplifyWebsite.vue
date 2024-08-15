@@ -7,6 +7,7 @@ import IStar01 from "@/assets/svg/star-01.vue";
 import IStar04 from "@/assets/svg/star-02.vue";
 import IStar05 from "@/assets/svg/star-05.vue";
 import { onMounted, ref } from "vue";
+const browserWidth = ref(1440);
 
 const data = {
   title:
@@ -31,21 +32,18 @@ const data = {
   ],
 };
 
-const width = ref();
-
 onMounted(() => {
-  const doResize = () => {
-    setTimeout(() => {
-      width.value = window.innerWidth;
-    });
-  };
-
+  browserWidth.value = window.innerWidth;
   window.addEventListener("resize", () => {
-    doResize();
+    browserWidth.value = window.innerWidth;
   });
+  const script = document.createElement('script');
+  script.src = 'https://wgt.podcastswaves.com/jamx.player.js';
+  script.async = true;
+  document.body.appendChild(script);
 
   setTimeout(() => {
-    doResize();
+    browserWidth.value = window.innerWidth;
   }, 100);
 });
 </script>
@@ -90,7 +88,24 @@ onMounted(() => {
             <div class="i-star-01-wrapper">
               <IStar01 />
             </div>
-            <iframe
+            <div
+              class="pulsar-player-wrapper"
+              data-scroll
+              data-scroll-direction="vertical"
+              data-scroll-speed="2"
+              :style="`width: ${
+                browserWidth >= 1440 ? 661 : (browserWidth - 100) * .6
+              }px; max-width: 750px; min-width: 492px;`"
+            >
+              <jamx-player  
+                seller="5000" 
+                subseller="1285" 
+                domain="jamx.ai" theme="0" 
+                layout="1"  
+                style="width: 100%;"
+              ></jamx-player>
+            </div>
+            <!-- <iframe
               :src="`https://sky.audiopulsar.com?seller=5000&subseller=1285&domain=demo.com&theme=2&layout=1&width=661px`"
               frameborder="0"
               height="256"
@@ -98,7 +113,7 @@ onMounted(() => {
               :style="`width: ${
                 width >= 1440 ? 661 : (width - 100) * .6
               }px; max-width: 750px; min-width: 492px;`"
-            ></iframe>
+            ></iframe> -->
           </div>
           <div
             class="player-02"
@@ -106,7 +121,24 @@ onMounted(() => {
             data-scroll-direction="vertical"
             data-scroll-speed="2"
           >
-            <iframe
+            <div
+              class="pulsar-player-wrapper"
+              data-scroll
+              data-scroll-direction="vertical"
+              data-scroll-speed="2"
+              :style="`width: ${
+                browserWidth >= 500 ? 393 : 314
+              }px; max-width: 750px; min-width: 314px;`"
+            >
+              <jamx-player  
+                seller="5000" 
+                subseller="1285" 
+                domain="jamx.ai" theme="0" 
+                layout="1"
+                style="width: 100%;"
+              ></jamx-player>
+            </div>
+            <!-- <iframe
               :src="`https://sky.audiopulsar.com?seller=5000&subseller=1183&domain=demo.com&theme=1&layout=1&width=393px`"
               frameborder="0"
               height="256"
@@ -114,7 +146,7 @@ onMounted(() => {
               :style="`width: ${
                 width >= 500 ? 393 : 314
               }px; max-width: 750px; min-width: 314px;`"
-            ></iframe>
+            ></iframe> -->
           </div>
         </div>
       </div>

@@ -4,7 +4,8 @@ import IStar04 from "@/assets/svg/star-02.vue";
 import IStar05 from "@/assets/svg/star-05.vue";
 import IYPlus from "@/assets/svg/yplus.vue";
 import IEye from "@/assets/svg/eye.vue";
-import IPlayer from "@/assets/svg/player.vue";
+import ILightning from "@/assets/svg/lightning.vue";
+import IRising from "@/assets/svg/rising.vue";
 import OverviewSessionDuration from "@/components/pages/homepage/OverviewSessionDuration.vue";
 import OverviewRateBox from "@/components/pages/homepage/OverviewRateBox.vue";
 </script>
@@ -19,18 +20,18 @@ import OverviewRateBox from "@/components/pages/homepage/OverviewRateBox.vue";
         <div class="i-star-06"><IStar04 /></div>
         <div class="text-box">
           <p>
-            An end-to-end audio platform,
+            The ultimate podcasting home for podcasters and publishers
             <span class="bold">
-              fusing advertisers, publishers, and podcasts in perfect harmony
+              to open new streams of revenue, create & offer better content, and grow together.
             </span>
           </p>
         </div>
         <div class="rate-box revinew-box">
           <OverviewRateBox
-            background="#FFA7FB"
+            background="#55FFA5"
             rate="300M"
-            :icon="IEye"
-            text="Monthly page views"
+            :icon="IRising"
+            text="Monthly Page Views"
             data-scroll
             data-scroll-direction="vertical"
             data-scroll-speed="1"
@@ -38,10 +39,10 @@ import OverviewRateBox from "@/components/pages/homepage/OverviewRateBox.vue";
         </div>
         <div class="rate-box click-throw-box">
           <OverviewRateBox
-            background="#55FFA5"
+            background="#D9FF3F"
             rate="24M"
-            :icon="IPlayer"
-            text="Monthly sessions"
+            :icon="ILightning"
+            text="Monthly Sessions"
             data-scroll
             data-scroll-direction="vertical"
             data-scroll-speed="1"
@@ -49,22 +50,33 @@ import OverviewRateBox from "@/components/pages/homepage/OverviewRateBox.vue";
         </div>
         <div class="rate-box subscribers-box">
           <OverviewRateBox
-            background="#D9FF3F"
+            background="#AAA7FF"
             rate="150M"
             :icon="IYPlus"
-            text="Monthly reach"
+            text="Monthly Reach"
             data-scroll
             data-scroll-direction="vertical"
             data-scroll-speed="1"
           />
         </div>
-        <div class="session-duration-box">
+        <div class="rate-box shows-box">
+          <OverviewRateBox
+            background="#FFA7FB"
+            rate="200+"
+            :icon="IEye"
+            text="Shows"
+            data-scroll
+            data-scroll-direction="vertical"
+            data-scroll-speed="1"
+          />
+        </div>
+        <!-- <div class="session-duration-box">
           <OverviewSessionDuration
             data-scroll
             data-scroll-direction="vertical"
             data-scroll-speed="0"
           />
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
@@ -97,8 +109,8 @@ import OverviewRateBox from "@/components/pages/homepage/OverviewRateBox.vue";
 
       .i-star-05 {
         position: absolute;
-        top: 100px;
-        right: calc(50% - 380px);
+        bottom: 10px;
+        right: calc(50% - 350px);
         scale: .8;
       }
 
@@ -117,8 +129,8 @@ import OverviewRateBox from "@/components/pages/homepage/OverviewRateBox.vue";
 
         p {
           width: 660px;
-          height: 450px;
-          padding: 60px 105px 78px 105px;
+          height: 400px;
+          padding: 70px 40px 69px 40px;
           font-size: 42px;
           font-weight: 400;
           line-height: 52px;
@@ -157,11 +169,11 @@ import OverviewRateBox from "@/components/pages/homepage/OverviewRateBox.vue";
         }
       }
 
-      .session-duration-box {
+      .shows-box {
         position: absolute;
-        left: calc(50% + 250px);
+        left: calc(50% + 300px);
         bottom: calc(50px);
-        transform: translate(0px, -50%);
+        transform: translate(0px, -200%);
       }
     }
   }
@@ -185,7 +197,8 @@ import OverviewRateBox from "@/components/pages/homepage/OverviewRateBox.vue";
 
   .homepage-overview .container .overview-inner .text-box p {
     width: 500px;
-    padding: 60px 50px;
+    padding: 50px 40px;
+    font-size: 32px;
   }
 
   .homepage-overview .container .overview-inner .i-star-03 {
@@ -193,12 +206,12 @@ import OverviewRateBox from "@/components/pages/homepage/OverviewRateBox.vue";
   }
 
   .homepage-overview .container .overview-inner .i-star-05 {
-    top: 150px;
-    right: calc(50% - 320px);
+    right: calc(50% - 300px);
+    bottom: 12px;
     scale: 0.6;
   }
 
-  .homepage-overview .container .overview-inner .session-duration-box {
+  .homepage-overview .container .overview-inner .shows-box {
     left: calc(50% + 200px);
   }
 
@@ -230,15 +243,11 @@ import OverviewRateBox from "@/components/pages/homepage/OverviewRateBox.vue";
 
   .homepage-overview .container .overview-inner .text-box p {
     width: 500px;
-    padding: 60px 50px;
+    padding: 50px 40px;
   }
 
   .homepage-overview .container .overview-inner .i-star-03 {
     left: calc(45% - 40px);
-  }
-
-  .homepage-overview .container .overview-inner .session-duration-box {
-    left: calc(50% + 130px);
   }
 
   .homepage-overview .container .overview-inner .rate-box.subscribers-box {
@@ -302,11 +311,11 @@ import OverviewRateBox from "@/components/pages/homepage/OverviewRateBox.vue";
     z-index: 1;
   }
 
-  .homepage-overview .container .overview-inner .session-duration-box {
+  .homepage-overview .container .overview-inner .shows-box {
     z-index: 2;
     right: auto;
     left: -3%;
-    bottom: 200px;
+    bottom: 70px;
     top: auto;
   }
 
